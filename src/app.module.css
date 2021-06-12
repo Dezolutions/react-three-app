@@ -1,0 +1,11 @@
+.container{
+  padding: 20px 5% 0;
+}
+
+.block{
+  display: flex;
+  justify-content: center;
+}
+.block > div{
+  margin: 0 10px;
+}
