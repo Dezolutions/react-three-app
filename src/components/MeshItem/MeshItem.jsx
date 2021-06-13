@@ -2,12 +2,9 @@ import React from 'react'
 
 const MeshItem = ({ position, color, args, form }) => {
   const mesh = React.useRef();
-  //useFrame allows us to re-render/update rotation on each frame
-  // useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
 
   return (
     <mesh
-      
       position={position}
       ref={mesh}
       castShadow>
