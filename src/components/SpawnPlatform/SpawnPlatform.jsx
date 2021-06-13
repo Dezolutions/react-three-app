@@ -4,7 +4,8 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from "@react-three/drei";
 import {useSelector} from 'react-redux'
 const SpawnPlatform = () => {
-  const meshes = useSelector(({meshReducer}) => meshReducer);
+  const meshes = useSelector(state => state);
+  
   return (
     <>
       <Canvas
@@ -34,13 +35,13 @@ const SpawnPlatform = () => {
             rotation={[-Math.PI / 2, 0, 0]}
             position={[0, 0, 0]}
             receiveShadow>
-            <planeBufferGeometry attach='geometry' args={[20, 20]} />
+            <planeBufferGeometry attach='geometry' args={[30, 30]} />
             <meshStandardMaterial
               color='lightblue'
               attach='material'
               factor={0.6}
-      />
-            {/* <shadowMaterial attach='material' opacity={0.3} /> */}
+            />
+            
           </mesh>
           
           <MeshArray meshes={meshes} />

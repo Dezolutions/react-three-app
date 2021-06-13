@@ -4,20 +4,20 @@ const meshes = [
     form: 'cube',
     args: [2, 2, 2],
     position: [0, 1, 0],
-    color: 'lightblue',
+    color: 'lightgreen'
   },
   {
     id: 2,
     form: 'sphere',
-    args: [1, 20, 20],
+    args: [1, 30, 30],
     position: [-2, 1, -5],
-    color: 'lightorange',
+    color: 'orange',
   },
   {
     id: 3,
     form: 'pyramid',
-    args: [2, 3, 4],
-    position: [5, 1.5, 2],
+    args: [2, 2, 4],
+    position: [5, 1, 2],
     color: 'pink',
   }
 ];
@@ -28,11 +28,11 @@ const MeshReducer = (state = meshes, action) => {
       return [
         ...state,
         {
-          id: action.id,
-          form: action.form,
-          position: [...action.position],
-          color: action.color,
-          args: [...action.args]
+          id: action.obj.id,
+          form: action.obj.form,
+          position: action.obj.position,
+          color: action.obj.color,
+          args: action.obj.args
         }
       ]
     case 'REMOVE_MESH':
