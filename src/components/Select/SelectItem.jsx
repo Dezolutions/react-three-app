@@ -2,6 +2,12 @@ import React from 'react'
 import {FormControl, MenuItem, Select, InputLabel} from '@material-ui/core'
 import styles from './select.module.css'
 const SelectItem = () => {
+  const [value, setValue] = React.useState('')
+  const onChangeValue = e => {
+    setValue(e.target.value)
+    
+  }
+  
   return (
     <>
       <FormControl variant="outlined" >
@@ -11,6 +17,8 @@ const SelectItem = () => {
             id="demo-simple-select-outlined"
             className={styles.select}
             label="Object"
+            onChange={onChangeValue}
+            value={value}
           >
             <MenuItem value="">
               <em>None</em>
